@@ -506,107 +506,102 @@
 
     </section><!-- /Services Section -->
 
-    <section id="portfolio" class="portfolio section py-5">
+    <section id="portfolio" class="services section">
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projets – Compétences BUT Informatique</h2>
+      </div>
+    
       <div class="container">
     
-        <div class="text-center mb-5">
-          <h2>Mes Projets</h2>
-          <p>Projets réalisés durant mon BUT Informatique, classés par compétences.</p>
+        <!-- FILTRES -->
+        <div class="text-center mb-5" data-aos="fade-up">
+          <button class="btn btn-sm btn-outline-dark m-1 filter-btn active" data-filter="all">Toutes</button>
+          <button class="btn btn-sm btn-outline-dark m-1 filter-btn" data-filter="c1">Compétence 1 – Développement</button>
+          <button class="btn btn-sm btn-outline-dark m-1 filter-btn" data-filter="c2">Compétence 2 – Optimisation</button>
+          <button class="btn btn-sm btn-outline-dark m-1 filter-btn" data-filter="c4">Compétence 4 – Données</button>
+          <button class="btn btn-sm btn-outline-dark m-1 filter-btn" data-filter="c5">Compétence 5 – Gestion</button>
+          <button class="btn btn-sm btn-outline-dark m-1 filter-btn" data-filter="c6">Compétence 6 – Équipe</button>
         </div>
     
-        <!-- FILTRES COMPÉTENCES -->
-        <div class="text-center mb-4">
-          <button class="btn btn-outline-dark m-1 filter-btn active" data-filter="all">
-            Toutes
-          </button>
-    
-          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c1">
-            Compétence 1 – Développement
-          </button>
-    
-          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c2">
-            Compétence 2 – Optimisation
-          </button>
-    
-          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c4">
-            Compétence 4 – Gestion des données
-          </button>
-    
-          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c5">
-            Compétence 5 – Conduite de projet
-          </button>
-    
-          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c6">
-            Compétence 6 – Travail d’équipe
-          </button>
-        </div>
-    
-        <!-- PROJETS -->
-        <div class="row g-4">
+        <div class="row gy-4">
     
           <!-- PROJET 1 -->
-          <div class="col-md-6 col-lg-4 project-card" data-category="c1 c5 c6">
-            <div class="card h-100 shadow-sm p-3 project-box">
-              <h5>SAE – Les Amis de Virebent</h5>
-              <p class="text-muted small">
-                Développement d’une plateforme patrimoniale avec système d’authentification et base de données relationnelle.
-                <span class="read-more">Lire plus</span>
+          <div class="col-lg-4 col-md-6 project-item" data-category="c1 c5 c6" data-aos="zoom-in">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-database"></i>
+              </div>
+              <h4>Les Amis de Virebent</h4>
+              <p>
+                Plateforme patrimoniale avec gestion des rôles utilisateurs et base de données relationnelle...
               </p>
     
-              <div class="mt-2">
-                <span class="badge bg-dark">WordPress</span>
-                <span class="badge bg-dark">PHP</span>
-                <span class="badge bg-dark">SQL</span>
-              </div>
+              <a href="#" 
+                 class="read-more"
+                 data-bs-toggle="modal"
+                 data-bs-target="#projectModal"
+                 data-title="Les Amis de Virebent"
+                 data-description="Projet de groupe développé sous WordPress et PHP. Mise en place d'une base de données relationnelle, filtres dynamiques et système d'authentification à trois niveaux (saisie, membres, public)."
+              >
+                <span>Lire plus</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
           </div>
     
           <!-- PROJET 2 -->
-          <div class="col-md-6 col-lg-4 project-card" data-category="c1 c2">
-            <div class="card h-100 shadow-sm p-3 project-box">
-              <h5>Comparaison d’approches algorithmiques</h5>
-              <p class="text-muted small">
-                Analyse comparative d’algorithmes selon leur efficacité, complexité et sobriété numérique.
-                <span class="read-more">Lire plus</span>
+          <div class="col-lg-4 col-md-6 project-item" data-category="c1 c2" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-cpu"></i>
+              </div>
+              <h4>Comparaison d’algorithmes</h4>
+              <p>
+                Analyse comparative selon efficacité, complexité et sobriété numérique...
               </p>
     
-              <div class="mt-2">
-                <span class="badge bg-dark">Java</span>
-                <span class="badge bg-dark">Python</span>
-                <span class="badge bg-dark">C</span>
-              </div>
+              <a href="#"
+                 class="read-more"
+                 data-bs-toggle="modal"
+                 data-bs-target="#projectModal"
+                 data-title="Comparaison d’approches algorithmiques"
+                 data-description="Création et analyse d’algorithmes en Java, Python et C. Évaluation basée sur la complexité, le temps d'exécution et l'impact en ressources."
+              >
+                <span>Lire plus</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
           </div>
     
           <!-- PROJET 3 -->
-          <div class="col-md-6 col-lg-4 project-card" data-category="c1">
-            <div class="card h-100 shadow-sm p-3 project-box">
-              <h5>Application Fitness – Spring Boot</h5>
-              <p class="text-muted small">
-                Développement d’une API REST permettant la gestion de routines et d’exercices.
-                <span class="read-more">Lire plus</span>
+          <div class="col-lg-4 col-md-6 project-item" data-category="c1" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="icon-wrapper">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h4>Application Fitness – Spring Boot</h4>
+              <p>
+                Développement d'une API REST pour la gestion de routines et exercices...
               </p>
     
-              <div class="mt-2">
-                <span class="badge bg-dark">Java</span>
-                <span class="badge bg-dark">Spring Boot</span>
-              </div>
+              <a href="#"
+                 class="read-more"
+                 data-bs-toggle="modal"
+                 data-bs-target="#projectModal"
+                 data-title="Application Fitness"
+                 data-description="Application backend développée en Java avec Spring Boot. Gestion CRUD de routines composées d'exercices, architecture MVC et API REST."
+              >
+                <span>Lire plus</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
           </div>
     
         </div>
-    
-        <!-- DETAIL PROJET -->
-        <div id="project-detail" class="mt-5 d-none">
-          <div class="card p-4 shadow-lg">
-            <button class="btn-close float-end" id="close-detail"></button>
-            <h4 id="detail-title"></h4>
-            <p id="detail-content"></p>
-          </div>
-        </div>
-    
       </div>
     </section>
+    
     
     <!-- Contact Section -->
     <section id="contact" class="contact section">
@@ -780,11 +775,28 @@
   <script src="assets/js/main.js"></script>
 
 
-  <script>
-    const filterBtns = document.querySelectorAll(".filter-btn");
-    const projects = document.querySelectorAll(".project-card");
+  <div class="modal fade" id="projectModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
   
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body">
+          <p id="modalDescription"></p>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+  <script>
     // FILTRAGE
+    const filterBtns = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project-item");
+  
     filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
   
@@ -803,27 +815,20 @@
       });
     });
   
-    // OUVERTURE DETAIL
-    const detailBox = document.getElementById("project-detail");
-    const detailTitle = document.getElementById("detail-title");
-    const detailContent = document.getElementById("detail-content");
+    // CONTENU MODAL
+    const projectModal = document.getElementById('projectModal');
   
-    document.querySelectorAll(".project-box").forEach(card => {
-      card.addEventListener("click", () => {
-        detailTitle.textContent = card.querySelector("h5").textContent;
+    projectModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
   
-        detailContent.textContent =
-          "Description détaillée du projet à compléter ici : contexte, objectifs, technologies utilisées, difficultés rencontrées et résultats obtenus.";
+      document.getElementById('modalTitle').textContent =
+        button.getAttribute('data-title');
   
-        detailBox.classList.remove("d-none");
-        detailBox.scrollIntoView({ behavior: "smooth" });
-      });
-    });
-  
-    document.getElementById("close-detail").addEventListener("click", () => {
-      detailBox.classList.add("d-none");
+      document.getElementById('modalDescription').textContent =
+        button.getAttribute('data-description');
     });
   </script>
+  
   
   
 </body>
