@@ -46,6 +46,31 @@
   --surface-color: #484848;
 }
 
+/* BADGES TECHNOLOGIES / OUTILS */
+.badge-html { background-color: #e34c26; }           /* HTML5 */
+.badge-css { background-color: #264de4; }            /* CSS3 */
+.badge-js { background-color: #f0db4f; color:#000; }/* JavaScript */
+.badge-java { background-color: #007396; }           /* Java */
+.badge-python { background-color: #306998; }        /* Python */
+.badge-sql { background-color: #f29111; }           /* SQL */
+.badge-php { background-color: #777bb4; }           /* PHP */
+.badge-wordpress { background-color: #21759b; }      /* WordPress bleu */
+.badge-elementor { background-color: #7460ee; }     /* Elementor violet */
+.badge-bootstrap { background-color: #563d7c; }     /* Bootstrap */
+.badge-spring { background-color: #6db33f; color:#fff;}/* Spring Boot vert */
+.badge-godot { background-color: #478cbf; color:#fff;}/* Godot Engine bleu */
+.badge-github { background-color: #24292f; color: #fff; } /* GitHub */
+.badge-responsive { background-color: #20c997; }     /* Design responsive */
+.badge-uiux { background-color: #fd7e14; color:#fff;} /* UI/UX */
+.badge-figma { background-color: #f24e1e; color:#fff;} /* Figma */
+.badge-vue { background-color: #42b883; color:#fff;}   /* Vue.js */
+.badge-typescript { background-color: #3178c6; color:#fff;} /* TypeScript */
+.badge-django { background-color: #092e20; color:#fff;} /* Django */
+.badge-aws { background-color: #ff9900; color:#000;}  /* AWS */
+.badge-linux { background-color: #f1f1f1; color:#000;} /* Linux */
+.badge-ci { background-color: #6f42c1; color:#fff;}   /* CI/CD ou GitLab CI */
+
+
 .dark-background {
   --background-color: #060606;
   --default-color: #ffffff;
