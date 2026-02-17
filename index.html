@@ -543,7 +543,10 @@
                  data-bs-target="#projectModal"
                  data-title="Les Amis de Virebent"
                  data-description="Projet de groupe développé sous WordPress et PHP. Mise en place d'une base de données relationnelle, filtres dynamiques et système d'authentification à trois niveaux (saisie, membres, public)."
+                 data-github="https://github.com/SAE-5-1/LesAmisDeVirebent.git"
               >
+              
+           
                 <span>Lire plus</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -777,34 +780,51 @@
 
   <div class="modal fade" id="projectModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+      <div class="modal-content service-item p-4">
   
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalTitle"></h5>
+        <div class="modal-header border-0 p-0 mb-3">
+          <h4 class="modal-title" id="modalTitle"></h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
   
-        <div class="modal-body">
+        <div class="modal-body p-0">
           <p id="modalDescription"></p>
+  
+          <div class="mt-4">
+            <a href="#" target="_blank" id="modalGithub"
+               class="read-more">
+              <span>Voir le projet</span>
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
         </div>
   
       </div>
     </div>
   </div>
+  
 
   <script>
-    // FILTRAGE
+    // -------------------------------
+    // FILTRAGE DES PROJETS PAR COMPÉTENCE
+    // -------------------------------
     const filterBtns = document.querySelectorAll(".filter-btn");
     const projects = document.querySelectorAll(".project-item");
   
     filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
   
-        document.querySelector(".filter-btn.active").classList.remove("active");
+        // Retirer la classe active de l'ancien bouton
+        const activeBtn = document.querySelector(".filter-btn.active");
+        if (activeBtn) activeBtn.classList.remove("active");
+  
+        // Ajouter la classe active au bouton cliqué
         btn.classList.add("active");
   
+        // Récupérer la compétence choisie
         const filter = btn.dataset.filter;
   
+        // Afficher ou masquer les projets selon la compétence
         projects.forEach(project => {
           if (filter === "all" || project.dataset.category.includes(filter)) {
             project.style.display = "block";
@@ -815,19 +835,37 @@
       });
     });
   
-    // CONTENU MODAL
+    // -------------------------------
+    // MODAL DYNAMIQUE DES PROJETS
+    // -------------------------------
     const projectModal = document.getElementById('projectModal');
   
     projectModal.addEventListener('show.bs.modal', function (event) {
       const button = event.relatedTarget;
   
+      // Titre et description
       document.getElementById('modalTitle').textContent =
         button.getAttribute('data-title');
   
       document.getElementById('modalDescription').textContent =
         button.getAttribute('data-description');
+  
+      // Lien GitHub
+      const githubBtn = document.getElementById('modalGithub');
+      githubBtn.href = button.getAttribute('data-github');
+    });
+  
+    // -------------------------------
+    // OPTIONNEL : rendre le filtre actif plus visible
+    // -------------------------------
+    // Ajout dynamique de la couleur si tu veux override le CSS
+    filterBtns.forEach(btn => {
+      btn.addEventListener("mouseover", () => {
+        btn.style.cursor = "pointer";
+      });
     });
   </script>
+  
   
   
   
