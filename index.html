@@ -506,80 +506,108 @@
 
     </section><!-- /Services Section -->
 
-    <section id="portfolio" class="portfolio section">
+    <section id="portfolio" class="portfolio section py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Mes Projets</h2>
     
-        <!-- Filtres Compétences -->
-        <div class="filters text-center mb-5">
-          <button class="filter-btn active" data-filter="all">Toutes</button>
-          <button class="filter-btn" data-filter="dev">Développement</button>
-          <button class="filter-btn" data-filter="algo">Optimisation</button>
-          <button class="filter-btn" data-filter="data">Base de données</button>
-          <button class="filter-btn" data-filter="gestion">Gestion de projet</button>
-          <button class="filter-btn" data-filter="team">Travail d’équipe</button>
+        <div class="text-center mb-5">
+          <h2>Mes Projets</h2>
+          <p>Projets réalisés durant mon BUT Informatique, classés par compétences.</p>
         </div>
     
-        <!-- Projets -->
-        <div class="row g-4" id="projectContainer">
+        <!-- FILTRES COMPÉTENCES -->
+        <div class="text-center mb-4">
+          <button class="btn btn-outline-dark m-1 filter-btn active" data-filter="all">
+            Toutes
+          </button>
     
-          <!-- Projet 1 -->
-          <div class="col-md-4 project-card" 
-               data-category="dev data gestion team"
-               data-title="Les Amis de Virebent"
-               data-description="Plateforme patrimoniale avec base de données relationnelle, filtres avancés et système d'authentification à 3 niveaux."
-               data-tech="WordPress, PHP, SQL"
-               data-link="https://github.com/SAE-5-1/LesAmisDeVirebent.git">
+          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c1">
+            Compétence 1 – Développement
+          </button>
     
-            <div class="card p-3 shadow-sm h-100">
-              <h5>Les Amis de Virebent</h5>
-              <p class="small text-muted">WordPress / PHP</p>
+          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c2">
+            Compétence 2 – Optimisation
+          </button>
+    
+          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c4">
+            Compétence 4 – Gestion des données
+          </button>
+    
+          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c5">
+            Compétence 5 – Conduite de projet
+          </button>
+    
+          <button class="btn btn-outline-dark m-1 filter-btn" data-filter="c6">
+            Compétence 6 – Travail d’équipe
+          </button>
+        </div>
+    
+        <!-- PROJETS -->
+        <div class="row g-4">
+    
+          <!-- PROJET 1 -->
+          <div class="col-md-6 col-lg-4 project-card" data-category="c1 c5 c6">
+            <div class="card h-100 shadow-sm p-3 project-box">
+              <h5>SAE – Les Amis de Virebent</h5>
+              <p class="text-muted small">
+                Développement d’une plateforme patrimoniale avec système d’authentification et base de données relationnelle.
+                <span class="read-more">Lire plus</span>
+              </p>
+    
+              <div class="mt-2">
+                <span class="badge bg-dark">WordPress</span>
+                <span class="badge bg-dark">PHP</span>
+                <span class="badge bg-dark">SQL</span>
+              </div>
             </div>
           </div>
     
-          <!-- Projet 2 -->
-          <div class="col-md-4 project-card"
-               data-category="dev algo"
-               data-title="Comparaison d'algorithmes"
-               data-description="Analyse comparative d’algorithmes selon efficacité, complexité et sobriété numérique."
-               data-tech="Java, Python, C">
+          <!-- PROJET 2 -->
+          <div class="col-md-6 col-lg-4 project-card" data-category="c1 c2">
+            <div class="card h-100 shadow-sm p-3 project-box">
+              <h5>Comparaison d’approches algorithmiques</h5>
+              <p class="text-muted small">
+                Analyse comparative d’algorithmes selon leur efficacité, complexité et sobriété numérique.
+                <span class="read-more">Lire plus</span>
+              </p>
     
-            <div class="card p-3 shadow-sm h-100">
-              <h5>Comparaison d'algorithmes</h5>
-              <p class="small text-muted">Java / Python / C</p>
+              <div class="mt-2">
+                <span class="badge bg-dark">Java</span>
+                <span class="badge bg-dark">Python</span>
+                <span class="badge bg-dark">C</span>
+              </div>
             </div>
           </div>
     
-          <!-- Projet 3 -->
-          <div class="col-md-4 project-card"
-               data-category="dev"
-               data-title="Application Fitness"
-               data-description="Application Spring Boot permettant de gérer des routines et exercices via API REST."
-               data-tech="Java, Spring Boot">
+          <!-- PROJET 3 -->
+          <div class="col-md-6 col-lg-4 project-card" data-category="c1">
+            <div class="card h-100 shadow-sm p-3 project-box">
+              <h5>Application Fitness – Spring Boot</h5>
+              <p class="text-muted small">
+                Développement d’une API REST permettant la gestion de routines et d’exercices.
+                <span class="read-more">Lire plus</span>
+              </p>
     
-            <div class="card p-3 shadow-sm h-100">
-              <h5>Application Fitness</h5>
-              <p class="small text-muted">Spring Boot</p>
+              <div class="mt-2">
+                <span class="badge bg-dark">Java</span>
+                <span class="badge bg-dark">Spring Boot</span>
+              </div>
             </div>
           </div>
     
         </div>
     
-        <!-- Détails projet -->
-        <div id="projectDetail" class="project-detail mt-5 d-none">
-          <div class="card p-4 shadow">
-            <button id="closeDetail" class="btn-close float-end"></button>
-            <h3 id="detailTitle"></h3>
-            <p id="detailDescription"></p>
-            <p><strong>Technologies :</strong> <span id="detailTech"></span></p>
-            <a id="detailLink" href="#" target="_blank" class="btn btn-primary mt-3 d-none">Voir le projet</a>
+        <!-- DETAIL PROJET -->
+        <div id="project-detail" class="mt-5 d-none">
+          <div class="card p-4 shadow-lg">
+            <button class="btn-close float-end" id="close-detail"></button>
+            <h4 id="detail-title"></h4>
+            <p id="detail-content"></p>
           </div>
         </div>
     
       </div>
     </section>
     
-
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
@@ -753,22 +781,20 @@
 
 
   <script>
-    const filterButtons = document.querySelectorAll(".filter-btn");
+    const filterBtns = document.querySelectorAll(".filter-btn");
     const projects = document.querySelectorAll(".project-card");
-    const detailBox = document.getElementById("projectDetail");
   
     // FILTRAGE
-    filterButtons.forEach(btn => {
+    filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
+  
         document.querySelector(".filter-btn.active").classList.remove("active");
         btn.classList.add("active");
   
-        const filter = btn.getAttribute("data-filter");
+        const filter = btn.dataset.filter;
   
         projects.forEach(project => {
-          const categories = project.getAttribute("data-category");
-  
-          if (filter === "all" || categories.includes(filter)) {
+          if (filter === "all" || project.dataset.category.includes(filter)) {
             project.style.display = "block";
           } else {
             project.style.display = "none";
@@ -778,32 +804,27 @@
     });
   
     // OUVERTURE DETAIL
-    projects.forEach(project => {
-      project.addEventListener("click", () => {
-        document.getElementById("detailTitle").textContent = project.dataset.title;
-        document.getElementById("detailDescription").textContent = project.dataset.description;
-        document.getElementById("detailTech").textContent = project.dataset.tech;
+    const detailBox = document.getElementById("project-detail");
+    const detailTitle = document.getElementById("detail-title");
+    const detailContent = document.getElementById("detail-content");
   
-        const link = project.dataset.link;
-        const linkBtn = document.getElementById("detailLink");
+    document.querySelectorAll(".project-box").forEach(card => {
+      card.addEventListener("click", () => {
+        detailTitle.textContent = card.querySelector("h5").textContent;
   
-        if (link) {
-          linkBtn.href = link;
-          linkBtn.classList.remove("d-none");
-        } else {
-          linkBtn.classList.add("d-none");
-        }
+        detailContent.textContent =
+          "Description détaillée du projet à compléter ici : contexte, objectifs, technologies utilisées, difficultés rencontrées et résultats obtenus.";
   
         detailBox.classList.remove("d-none");
         detailBox.scrollIntoView({ behavior: "smooth" });
       });
     });
   
-    // FERMER DETAIL
-    document.getElementById("closeDetail").addEventListener("click", () => {
+    document.getElementById("close-detail").addEventListener("click", () => {
       detailBox.classList.add("d-none");
     });
   </script>
+  
   
 </body>
 
