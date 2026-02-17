@@ -785,45 +785,54 @@
   <script src="assets/js/main.js"></script>
 
 
-  <!-- Modal Projet -->
-<div class="project-modal" id="projectModal">
-  <div class="modal-content-custom">
-    <button class="modal-close" id="modalClose">
-      <i class="bi bi-x-lg"></i>
-    </button>
-
-    <h3 id="modalTitle">Titre du projet</h3>
-    <p id="modalDescription">Description du projet</p>
-
-    <div class="tech-tags mb-2" id="modalTech">
-      <!-- badges ajoutés dynamiquement via JS -->
+  <div class="modal fade" id="projectModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content service-item p-4">
+  
+        <div class="modal-header border-0 p-0 mb-3">
+          <h4 class="modal-title" id="modalTitle"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <div class="modal-body p-0">
+          <p id="modalDescription"></p>
+  
+          <!-- TECHNOLOGIES DYNAMIQUES -->
+          <div id="modalTech" class="mb-3"></div>
+  
+          <a href="#" target="_blank" id="modalGithub" class="read-more">
+            <span>Voir le projet</span>
+            <i class="bi bi-github"></i>
+          </a>
+        </div>
+  
+      </div>
     </div>
-
-    <a id="modalGithub" href="#" target="_blank" class="btn btn-accent mt-3">
-      Voir le projet sur GitHub
-    </a>
   </div>
-</div>
-
   
   
 
   <script>
-        // ========================
-    // FILTRAGE PAR COMPETENCES
-    // ========================
+    // -------------------------------
+    // FILTRAGE DES PROJETS PAR COMPÉTENCE
+    // -------------------------------
     const filterBtns = document.querySelectorAll(".filter-btn");
     const projects = document.querySelectorAll(".project-item");
-
+  
     filterBtns.forEach(btn => {
       btn.addEventListener("click", () => {
-
-        // Retirer active du bouton précédent
-        document.querySelector(".filter-btn.active")?.classList.remove("active");
+  
+        // Retirer la classe active de l'ancien bouton
+        const activeBtn = document.querySelector(".filter-btn.active");
+        if (activeBtn) activeBtn.classList.remove("active");
+  
+        // Ajouter la classe active au bouton cliqué
         btn.classList.add("active");
-
+  
+        // Récupérer la compétence choisie
         const filter = btn.dataset.filter;
-
+  
+        // Afficher ou masquer les projets selon la compétence
         projects.forEach(project => {
           if (filter === "all" || project.dataset.category.includes(filter)) {
             project.style.display = "block";
@@ -833,60 +842,48 @@
         });
       });
     });
-
-    // ========================
-    // MODAL PROJET
-    // ========================
+  
+    // -------------------------------
+    // MODAL DYNAMIQUE DES PROJETS
+    // -------------------------------
     const projectModal = document.getElementById('projectModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalTech = document.getElementById('modalTech');
-    const modalGithub = document.getElementById('modalGithub');
-    const modalClose = document.getElementById('modalClose');
+  
+    projectModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+  
+      // Titre et description
+      document.getElementById('modalTitle').textContent =
+        button.getAttribute('data-title');
+  
+      document.getElementById('modalDescription').textContent =
+        button.getAttribute('data-description');
+  
+      // Lien GitHub
+      const githubBtn = document.getElementById('modalGithub');
+      githubBtn.href = button.getAttribute('data-github');
 
-    // Ouvrir modal
-    document.querySelectorAll('.read-more').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
+      // badges technos
+      const techContainer = document.getElementById('modalTech');
+      techContainer.innerHTML = ""; // reset
 
-        const title = btn.dataset.title;
-        const desc = btn.datasetDescription || btn.dataset.description; // compatibilité
-        const tech = btn.datasetTech ? btn.datasetTech.split(',') : []; // exemple: "HTML,CSS,JS"
-        const github = btn.datasetGithub || '#';
-
-        // Remplir contenu modal
-        modalTitle.textContent = title;
-        modalDescription.textContent = desc;
-
-        // Ajouter badges techno dynamiquement
-        modalTech.innerHTML = '';
-        tech.forEach(t => {
-          const span = document.createElement('span');
-          span.className = `badge badge-${t.toLowerCase().trim()} me-1`;
-          span.textContent = t.trim();
-          modalTech.appendChild(span);
-        });
-
-        // Ajouter lien GitHub
-        modalGithub.href = github;
-
-        // Afficher modal
-        projectModal.style.display = 'flex';
+      const techs = JSON.parse(button.getAttribute('data-tech'));
+      techs.forEach(tech => {
+        const span = document.createElement('span');
+        span.className = "badge bg-secondary me-1"; // style badges modal
+        span.textContent = tech;
+        techContainer.appendChild(span);
       });
     });
-
-    // Fermer modal
-    modalClose.addEventListener('click', () => {
-      projectModal.style.display = 'none';
+  
+    // -------------------------------
+    // OPTIONNEL : rendre le filtre actif plus visible
+    // -------------------------------
+    // Ajout dynamique de la couleur si tu veux override le CSS
+    filterBtns.forEach(btn => {
+      btn.addEventListener("mouseover", () => {
+        btn.style.cursor = "pointer";
+      });
     });
-
-    // Fermer en cliquant en dehors du contenu
-    projectModal.addEventListener('click', e => {
-      if(e.target === projectModal) {
-        projectModal.style.display = 'none';
-      }
-    });
-
   </script>
   
   
